@@ -1,6 +1,6 @@
 
 function App() {
-  const createDigit = () =>{
+  const createDigits = () =>{
     const digits =[];
     for(let i = 1; i < 10; i++){
       digits.push(
@@ -23,7 +23,7 @@ function App() {
           <button>DEL</button>
         </div>
         <div className="digits">
-          {createDigit() }
+          {createDigits() }
           <button>0</button>
           <button>.</button>
           <button>=</button>
