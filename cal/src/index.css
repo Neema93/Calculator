@@ -39,5 +39,18 @@ body{
 .display span{
   font-size: 14px;
   color: #888;
-  
+
+}
+button{
+    appearance: none;
+    border: none;
+    outline: none;
+    color: #FFF;
+    font-size: 16px;
+    padding: 16px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+button:hover{
+  opacity: 0.9;
 }
