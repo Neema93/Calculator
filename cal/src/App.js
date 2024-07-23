@@ -11,7 +11,7 @@ function App() {
           <button>*</button>
           <button>+</button>
           <button>-</button>
-          
+          <button>DEL</button>
         </div>
      </div>
     </div>
