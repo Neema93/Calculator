@@ -4,7 +4,17 @@ function App() {
   const [result, setResult] = useState("");
   const ops =['/' , '*', '+','-','.'];
   const updateCalc = value =>{
+     if(
+      ops.includes(value) && calc === '' ||
+      ops.includes(value) && ops.includes(calc.slice(-1))
+     )
+     {
+      return;
+     }
       setCalc(calc + value);
+      if(!ops.includes(value)){
+        setResult(eval(calc + value).toString());
+      }
   }
   const createDigits = () =>{
     const digits =[];
@@ -19,7 +29,8 @@ function App() {
     <div className="App">
      <div className="calculator">
         <div className="display">
-         {result ?  <span>(0)</span> :''}
+         {result ?  <span>({result})</span> :''}
+         &nbsp;
          {calc || "0"}
         </div>
         <div className="operators">
