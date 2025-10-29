@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import Calculator from "./component/Calculator";
 function App() {
   // const [calc, setCalc] = useState("");

@@ -1,19 +1,20 @@
 import { useState } from "react";
+import { evaluate } from 'mathjs';
 export default function Calculator(){
     const [calc, setCalc] = useState("");
       const [result, setResult] = useState("");
       const ops =['/' , '*', '+','-','.'];
       const updateCalc = value =>{
          if(
-          ops.includes(value) && calc === '' ||
-          ops.includes(value) && ops.includes(calc.slice(-1))
+          (ops.includes(value) && calc === '') ||
+          (ops.includes(value) && ops.includes(calc.slice(-1)))
          )
          {
           return;
          }
           setCalc(calc + value);
           if(!ops.includes(value)){
-            setResult(eval(calc + value).toString());
+            setResult(evaluate(calc + value).toString());
           }
       }
       const createDigits = () =>{
@@ -26,10 +27,10 @@ export default function Calculator(){
         return digits;
       }
       const calculate = () => {
-        setCalc(eval(calc).toString());
+        setCalc(evaluate(calc).toString());
       }
       const deleteLast = () => {
-        if (calc == ''){
+        if (calc === ''){
           return;
         }
         const value = calc.slice(0, -1);
