@@ -23,13 +23,16 @@ export default function Calculator() {
   };
   const createDigits = () => {
     const digits = [];
-    for (let i = 1; i < 10; i++) {
-      digits.push(
-        <button onClick={() => updateCalc(i.toString())} key={i}>
-          {i}
-        </button>,
-      );
-    }
+    for (let i = 9; i > 0; i--) {
+    digits.push(
+      <button
+        key={i}
+        onClick={() => updateCalc(i.toString())}
+      >
+        {i}
+      </button>
+    );
+  }
     return digits;
   };
   const calculate = () => {
