@@ -46,6 +46,11 @@ export default function Calculator() {
     }
     const value = calc.slice(0, -1);
     setCalc(value);
+     try {
+    setResult(value ? evaluate(value).toString() : "");
+  } catch {
+    setResult("");
+  }
   };
   return (
     <div className="calculator">
